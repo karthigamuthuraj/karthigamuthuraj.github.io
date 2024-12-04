@@ -1,1 +1,388 @@
-Hello
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <link rel="stylesheet" href="assets/css/styles.css">
+
+        <!-- =====BOX ICONS===== -->
+        <link href='https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css' rel='stylesheet'>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+
+        <title>Portfolio website complete</title>
+    </head>
+    <body>
+        <!--===== HEADER =====-->
+        <header class="l-header">
+            <nav class="nav bd-grid">
+                <div>
+                    <a href="#" class="nav__logo">Karthiyayini Muthuraj</a>
+                </div>
+
+                <div class="nav__menu" id="nav-menu">
+                    <ul class="nav__list">
+                        <li class="nav__item"><a href="#home" class="nav__link active-link">Home</a></li>
+                        <li class="nav__item"><a href="#about" class="nav__link">About</a></li>
+                        <li class="nav__item"><a href="#work-experience" class="nav__link">Work Experience</a></li>
+                        <!-- <li class="nav__item"><a href="#work" class="nav__link">Projects</a></li> -->
+                        <li class="nav__item"><a href="#skills" class="nav__link">Skills</a></li>
+                        <li class="nav__item"><a href="#footer" class="nav__link">Contact</a></li>
+                        <li class="nav__item"><a href="KarthiyayiniMuthuraj.pdf" download class="nav__link">Resume</a></li>
+                    </ul>
+                </div>
+                <div class="nav__toggle" id="nav-toggle">
+                    <i class='bx bx-menu'></i>
+                </div>
+            </nav>
+        </header>
+
+        <main class="l-main">
+            <!--===== HOME =====-->
+            <section class="home bd-grid" id="home">
+                <div class="home__data">
+                    <h1 class="home__title">Hi,<br>I'm <span class="home__title-color">Karthiyayini Muthuraj</span><br> Software Developer</h1>
+                    <!-- CV Download Button -->
+                    <a href="KarthiyayiniMuthuraj.pdf" class="button" download="KarthiyayiniMuthuraj_CV">Download CV</a>
+                    <!-- <a href="#" class="button">Contact</a> -->
+                </div>
+
+                <div class="home__social">
+                    <a href="https://www.linkedin.com/in/karthiyayinimuthuraj/" class="home__social-icon"><i class='bx bxl-linkedin'></i></a></a>
+                    <a href="https://github.com/karthigamuthuraj" class="home__social-icon"><i class='bx bxl-github' ></i></a>
+                    <a href="https://medium.com/@karthiyayini.muthuraj" class="home__social-icon"><i class='bx bxl-medium' ></i></a>
+                    <a href="mailto:karthiyayinimuthuraj@gmail.com" class="home__social-icon" title="Email KarthiyayiniMuthuraj"><i class='bx bx-envelope'></i></a>
+                    
+                </div>
+
+                <!-- <div class="home__img">
+                    <svg class="home__blob" viewBox="0 0 479 467" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                        <mask id="mask0" mask-type="alpha">
+                            <path d="M9.19024 145.964C34.0253 76.5814 114.865 54.7299 184.111 29.4823C245.804 6.98884 311.86 -14.9503 370.735 14.143C431.207 44.026 467.948 107.508 477.191 174.311C485.897 237.229 454.931 294.377 416.506 344.954C373.74 401.245 326.068 462.801 255.442 466.189C179.416 469.835 111.552 422.137 65.1576 361.805C17.4835 299.81 -17.1617 219.583 9.19024 145.964Z"/>
+                        </mask>
+                        <g mask="url(#mask0)">
+                            <path d="M9.19024 145.964C34.0253 76.5814 114.865 54.7299 184.111 29.4823C245.804 6.98884 311.86 -14.9503 370.735 14.143C431.207 44.026 467.948 107.508 477.191 174.311C485.897 237.229 454.931 294.377 416.506 344.954C373.74 401.245 326.068 462.801 255.442 466.189C179.416 469.835 111.552 422.137 65.1576 361.805C17.4835 299.81 -17.1617 219.583 9.19024 145.964Z"/>
+                            <image class="home__blob-img" x="50" y="10" href="assets/img/about.png"/>
+                        </g>
+                    </svg>
+                </div> -->
+            </section>
+
+            <!--===== ABOUT =====-->
+            <section class="about section " id="about">
+                <h2 class="section-title">About</h2>
+
+                <div class="about__container bd-grid">
+                    <div class="about__img">
+                        <img src="assets/img/intro.png" alt="" style="width: 500px; height: auto;">
+                    </div>
+                    
+                    <div>
+                        <h2 class="about__subtitle">I am Karthiyayini Muthuraj</h2>
+                        <p class="about__text">A technology professional with over 14 years of experience in software development and AI engineering. My expertise spans backend development with PHP and Laravel, frontend technologies like React.js and Angular, and advanced AI techniques, including Machine Learning, Deep Learning, and Natural Language Processing. </p>           
+                    </div>                                   
+                </div>
+            </section>
+
+            <!--===== EXPERIENCE =====-->
+            <section class="work-experience section" id="work-experience">
+                <h2 class="section-title">Work Experience</h2>
+                <div class="work-experience__container bd-grid">
+                    <div class="work-experience">
+                        <div class="work-experience__item">
+                            <h3 class="work-experience__job-title">ConcertIDC - Senior Technical Lead</h3>
+                            <p class="work-experience__date">January 2022 – Present</p>
+                            <p class="work-experience__location">Chennai, Tamil Nadu, India</p>
+                            <ul class="work-experience__responsibilities">
+                                <li>Collaborated with stakeholders and clients to ensure project alignment with business goals and deliver successful outcomes.</li>
+                            <li>Led the development of the "Innovazone" product, incorporating innovative features to address complex business challenges.</li>
+                            <li>Upgraded frameworks by migrating from Laravel 5 to Laravel 8 and from Angular 2 to React.js, improving performance and maintainability.</li>
+                            <li>Designed and implemented proof-of-concept platforms utilizing APPSync, GraphQL, and MFA authentication to enhance scalability and security.</li>
+                            <li>Developed device integration solutions using Python frameworks for advanced scanning capabilities, streamlining operations and increasing efficiency.</li>
+                            </ul>
+                            <p class="work-experience__achievements"><strong>Achievements:</strong></p>
+                            <ul class="achievements-icons">
+                                <li><i class="fas fa-trophy"></i> Successfully completed the AWS Certified Developer - Associate program.</li>
+                            </ul>
+                        </div>
+                        <!-- International Development Connection -->
+                        <div class="work-experience__item">
+                            <h3 class="work-experience__job-title">International Development Connection - Senior Technical Lead</h3>
+                            <p class="work-experience__date">March 2020 - January 2021 (11 months)</p>
+                            <p class="work-experience__location">Chennai, Tamil Nadu, India</p>
+                            <ul class="work-experience__responsibilities">
+                                <li>Collaborated directly with stakeholders and clients to develop the "Innovazone" project.</li>
+                                <li>Upgraded frameworks from Laravel 5 to Laravel 8 and transitioned from Angular 2 to React.js.</li>
+                                <li>Worked on proof-of-concept platforms, including APPSync, GraphQL, SAML, and MFA authentication.</li>
+                            </ul>
+                            <p class="work-experience__achievements"><strong>Achievements:</strong></p>
+                            <ul class="achievements-icons">
+                                <li><i class="fa fa-download"></i> Streamlined downloadable file sizes.</li>
+                                <li><i class="fa fa-bolt"></i> Improved Laravel ORM query performance.</li>
+                                <li><i class="fa fa-cogs"></i> Updated unit tests for REST APIs.</li>
+                                <li><i class="fa fa-thumbs-up"></i> Received positive feedback from clients and management.</li>
+                            </ul>
+                        </div>
+                    
+                        <!-- KnackForge -->
+                        <div class="work-experience__item">
+                            <h3 class="work-experience__job-title">KnackForge - Technical Lead (Full Stack Laravel Developer)</h3>
+                            <p class="work-experience__date">June 2018 - June 2019 (1 year 1 month)</p>
+                            <p class="work-experience__location">Chennai, Tamil Nadu, India</p>
+                            <ul class="work-experience__responsibilities">
+                                <li>Enhanced infrastructure and code quality for multi-tier web systems.</li>
+                                <li>Developed scalable applications using unit-testable methods and conducted code reviews.</li>
+                                <li>Coached and mentored a team of eight developers.</li>
+                                <li>Provided project updates, identified risks, and proposed solutions to the management team.</li>
+                                <li>Evaluated and recommended architecture for P2P systems to ensure architectural integrity.</li>
+                                <li>Participated in sprint planning, execution, retrospectives, and backlog grooming.</li>
+                            </ul>
+                            <p class="work-experience__achievements"><strong>Achievements:</strong></p>
+                            <ul class="achievements-icons">
+                                <li><i class="fa fa-users"></i> Trained and mentored eight developers in Laravel and Angular frameworks.</li>
+                                <li><i class="fa fa-code"></i> Developed a dynamic Angular forms package.</li>
+                                <li><i class="fa fa-puzzle-piece"></i> Enhanced Laravel architecture with design patterns for feature expansion.</li>
+                                <li><i class="fa fa-search"></i> Improved search and loading times.</li>
+                                <li><i class="fa fa-trophy"></i> Awarded "Quarterly Employee of the Year."</li>
+                            </ul>
+                        </div>
+                    
+                        <!-- OptiSol Business Solutions -->
+                        <div class="work-experience__item">
+                            <h3 class="work-experience__job-title">OptiSol Business Solutions - Full Stack Technical Lead</h3>
+                            <p class="work-experience__date">February 2016 - March 2018 (2 years 2 months)</p>
+                            <p class="work-experience__location">Madurai, Tamil Nadu, India</p>
+                            <ul class="work-experience__responsibilities">
+                                <li>Defined project requirements with clients and BAs.</li>
+                                <li>Managed a team of four, overseeing task distribution and work schedules.</li>
+                                <li>Participated in recruitment and coordinated team efforts to meet project goals.</li>
+                                <li>Supervised code reviews and ensured quality standards.</li>
+                            </ul>
+                            <p class="work-experience__achievements"><strong>Achievements:</strong></p>
+                            <ul class="achievements-icons">
+                                <li><i class="fa fa-sun"></i> Led development of solar system software.</li>
+                                <li><i class="fa fa-chalkboard-teacher"></i> Trained junior team members.</li>
+                                <li><i class="fa fa-file-alt"></i> Improved error documentation systems.</li>
+                                <li><i class="fa fa-star"></i> Received the "Star Award" for outstanding performance.</li>
+                            </ul>
+                        </div>
+                    
+                        <!-- Invigor Group -->
+                        <div class="work-experience__item">
+                            <h3 class="work-experience__job-title">Invigor Group - PHP Web Developer</h3>
+                            <p class="work-experience__date">August 2014 - January 2016 (1 year 6 months)</p>
+                            <p class="work-experience__location">Chennai, Tamil Nadu, India</p>
+                            <ul class="work-experience__responsibilities">
+                                <li>Collaborated with offshore teams and senior technical leaders to effectively communicate and align with business requirements.</li>
+                                <li>Developed complex logic-driven programs using frameworks such as CodeIgniter, Laravel, Angular, and Vue.js as part of a four-person team.</li>
+                                <li>Utilized Google GPS navigation systems in a project for the Austrian government, demonstrating adaptability to new technologies.</li>
+                            </ul>
+                            <p class="work-experience__achievements"><strong>Achievements:</strong></p>
+                            <ul class="achievements-icons">
+                                <li> <i class="fas fa-trophy"></i>Awarded "Best Coder" for delivering exceptionally clean and efficient code.</li>
+                            </ul>
+                        </div>
+                    
+                        <!-- UDeserve Technologies -->
+                        <div class="work-experience__item">
+                            <h3 class="work-experience__job-title">UDeserve Technologies - PHP Developer</h3>
+                            <p class="work-experience__date">May 2011 - July 2014 (3 years 3 months)</p>
+                            <p class="work-experience__location">Madurai, Tamil Nadu, India</p>
+                            <ul class="work-experience__responsibilities">
+                                <li>Collaborated with programmers, designers, and developers to create new software applications and programs.</li>
+                                <li>Developed programming scripts to enhance the performance and functionality of business applications.</li>
+                                <li>Analyzed and resolved technical issues, demonstrating strong problem-solving skills.</li>
+                            </ul>
+                            <p class="work-experience__achievements"><strong>Achievements:</strong></p>
+                            <ul class="achievements-icons">
+                                <li><i class="fa fa-trophy"></i> Awarded "Employee of the Year."</li>
+                                <li><i class="fa fa-medal"></i> Recognized as "Employee of the Month."</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+
+                </div>
+            </section>
+
+
+            <!--===== SKILLS =====-->
+            <section class="skills section" id="skills">
+                <h2 class="section-title">Skills</h2>
+                <div class="skills__container bd-grid">
+                    <!-- First Row for Categories -->
+                    <div class="skills__row">
+                        <div class="skills__data">
+                            <i class='fab fa-python skills__icon'></i>
+                            <span class="skills__name">Python</span>
+                        </div>
+                        <div class="skills__data">
+                            <i class='bx bxs-brain skills__icon'></i>
+                            <span class="skills__name">Machine Learning</span>
+                        </div>
+                        <div class="skills__data">
+                            <i class='bx bxs-chip skills__icon'></i>
+                            <span class="skills__name">Deep Learning</span>
+                        </div>
+                        <div class="skills__data">
+                            <i class='bx bxs-chat skills__icon'></i>
+                            <span class="skills__name">NLP</span>
+                        </div>
+                        <div class="skills__data">
+                            <i class='fas fa-cogs skills__icon'></i>
+                            <span class="skills__name">Large Language Models</span>
+                        </div>
+                        <div class="skills__data">
+                            <i class='fas fa-chart-line skills__icon'></i>
+                            <span class="skills__name">Data Science</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="skills__container bd-grid">
+                    <!-- Second Row for Categories -->
+                    <div class="skills__row">
+                        <div class="skills__data">
+                            <i class="fas fa-robot skills__icon"></i>
+                            <span class="skills__name">Generative AI</span>
+                        </div>
+                        <div class="skills__data">
+                            <i class='fas fa-chart-pie skills__icon'></i>
+                            <span class="skills__name">Data Analytics</span>
+                        </div>
+                        <div class="skills__data">
+                            <i class='fas fa-file-alt skills__icon'></i>
+                            <span class="skills__name">Data Collection</span>
+                        </div>
+                        <div class="skills__row">
+                            <div class="skills__data">
+                                <i class='fab fa-aws skills__icon'></i>
+                                <span class="skills__name">Amazon Web Service</span>
+                            </div>
+                            <div class="skills__data">
+                                <i class='fab fa-google skills__icon'></i>
+                                <span class="skills__name">Google Cloud Platform</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="skills__container bd-grid">
+                    
+                    <div class="skills__row">
+                        <div class="skills__data">
+                            <i class="fab fa-php skills__icon"></i>
+                            <span class="skills__name">PHP</span>
+                        </div>
+                        <div class="skills__data">
+                            <i class="fab fa-laravel skills__icon"></i>
+                            <span class="skills__name">Laravel</span>
+                        </div>
+                        <div class="skills__data">
+                            <i class="fab fa-free-code-camp skills__icon"></i>
+                            <span class="skills__name">CodeIgniter</span>
+                        </div>
+                        <div class="skills__data">
+                            <i class="fab fa-angular skills__icon"></i>
+                            <span class="skills__name">Angular</span>
+                        </div>
+                        <div class="skills__data">
+                            <i class="fab fa-react skills__icon"></i>
+                            <span class="skills__name">React</span>
+                        </div>
+                        
+                        <div class="skills__data">
+                            <i class="fab fa-js-square skills__icon"></i>
+                            <span class="skills__name">JavaScript</span>
+                        </div>
+                        
+                    </div>
+                </div>
+                
+                
+                
+                
+                <div class="skills__container bd-grid">
+                        <!-- Fourth Row for Categories -->
+                    <div class="skills__row">
+
+                        <div class="skills__data">
+                            <i class='fas fa-file-code skills__icon'></i>
+                            <span class="skills__name">Visual Studio Code</span>
+                        </div>
+                        <div class="skills__data">
+                            <i class='fas fa-leaf skills__icon'></i>
+                            <span class="skills__name">Anaconda</span>
+                        </div>
+                        <div class="skills__data">
+                            <i class='fas fa-book skills__icon'></i>
+                            <span class="skills__name">Google Colab</span>
+                        </div>
+                        <div class="skills__data">
+                            <i class='fas fa-code-branch skills__icon'></i>
+                            <span class="skills__name">Jupyter Notebook</span>
+                        </div>
+                    </div>
+                   
+                </div>   
+                <div class="skills__container bd-grid">
+                    <!-- Second Row for Categories -->
+                    <div class="skills__row">
+                        <div class="skills__data">
+                            <i class="fas fa-database skills__icon"></i>
+                            <span class="skills__name">MySQL</span>
+                        </div>
+                        <div class="skills__data">
+                            <i class='fas fa-database skills__icon'></i>
+                            <span class="skills__name">SQL</span>
+                        </div>
+                        <div class="skills__data">
+                            <i class="fas fa-database skills__icon"></i>
+                            <span class="skills__name">PostgreSQL</span>
+                        </div>
+                        <div class="skills__data">
+                            <i class="fas fa-database skills__icon"></i>
+                            <span class="skills__name">SQLite</span>
+                        </div>
+                    </div>
+                </div> 
+
+            </section>
+            
+            <!-- Download CV Button Before Footer -->
+            <div class="cv-button-container">
+                <a href="KarthiyayiniMuthuraj.pdf" download class="button">Download Resume</a>
+            </div>
+
+        </main>
+
+        <!--===== FOOTER =====-->
+        <footer class="footer" id="footer">
+            <h2 class="footer__title">Get In Touch</h2>
+            
+            <div class="footer__social">
+                <!-- Name -->
+                <p><strong>Name:</strong> Karthiyayini Muthuraj</p>
+                
+                <!-- Contact Number -->
+                <!-- <p><strong>Phone:</strong> <a href="tel:+16474461531" class="footer__link"> </a></p> -->
+                
+                <!-- Email -->
+                <p><strong>Email:</strong> <a href="mailto:karthiyayinimuthuraj@gmail.com" class="footer__link"> karthiyayinimuthuraj@gmail.com</a></p>
+                
+                <!-- Address -->
+                <p><strong>Address:</strong> Chennai, TamilNadu</p>
+            </div>
+
+            <div class="footer__social-icons">
+                <a href="https://www.linkedin.com/in/karthiyayinimuthuraj/" class="footer__icon"><i class='bx bxl-linkedin'></i></a>
+                <a href="https://github.com/karthigamuthuraj" class="footer__icon"><i class='bx bxl-github'></i></a>
+            </div>
+        </footer>
+
+        <!--===== SCROLL REVEAL =====-->
+        <script src="https://unpkg.com/scrollreveal"></script>
+
+        <!--===== MAIN JS =====-->
+        <script src="assets/js/main.js"></script>
+    </body>
+</html>
