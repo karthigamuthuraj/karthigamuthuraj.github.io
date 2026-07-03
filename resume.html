@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Karthiyayini Muthuraj — Resume</title>
+<style>
+  @page { size: A4; margin: 0; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { background: #fff; }
+  body {
+    font-family: "Segoe UI", Calibri, Arial, sans-serif;
+    color: #1e293b;
+    font-size: 9.6pt;
+    line-height: 1.45;
+  }
+  .page {
+    width: 210mm;
+    min-height: 297mm;
+    padding: 12mm 14mm;
+  }
+
+  /* Header */
+  .header { border-bottom: 2.5px solid #4f46e5; padding-bottom: 4mm; margin-bottom: 5mm; }
+  .name { font-size: 20pt; font-weight: 700; color: #111827; letter-spacing: 0.02em; }
+  .role { font-size: 11pt; color: #4f46e5; font-weight: 600; margin-top: 1mm; }
+  .contact-line { margin-top: 2mm; font-size: 8.6pt; color: #475569; }
+  .contact-line a { color: #4f46e5; text-decoration: none; }
+  .contact-line span { margin-right: 4mm; }
+
+  /* Sections */
+  h2.sec {
+    font-size: 10.5pt;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: #4f46e5;
+    border-bottom: 1px solid #e2e8f0;
+    padding-bottom: 1mm;
+    margin: 4.5mm 0 2.5mm;
+  }
+  p.summary { color: #334155; text-align: justify; }
+
+  /* Skills */
+  .skills-grid { display: grid; grid-template-columns: 34mm 1fr; row-gap: 1.2mm; }
+  .skills-grid .label { font-weight: 700; color: #111827; font-size: 8.8pt; }
+  .skills-grid .val { color: #334155; font-size: 8.8pt; }
+
+  /* Projects & Experience entries */
+  .entry { margin-bottom: 3mm; page-break-inside: avoid; }
+  .entry-head { display: flex; justify-content: space-between; align-items: baseline; }
+  .entry-title { font-weight: 700; color: #111827; font-size: 10pt; }
+  .entry-title .ctx { font-weight: 400; color: #64748b; font-size: 8.8pt; }
+  .entry-date { color: #64748b; font-size: 8.6pt; white-space: nowrap; margin-left: 4mm; }
+  .entry ul { margin: 1mm 0 0 4.5mm; }
+  .entry li { margin-bottom: 0.8mm; color: #334155; }
+  .stack { margin-top: 1mm; font-size: 8.4pt; color: #4f46e5; }
+  .stack b { color: #475569; font-weight: 600; }
+
+  .two-col { display: grid; grid-template-columns: 1fr 1fr; column-gap: 8mm; }
+  .compact li { margin-bottom: 0.6mm; }
+  a { color: #4f46e5; text-decoration: none; }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="header">
+    <div class="name">KARTHIYAYINI MUTHURAJ</div>
+    <div class="role">Senior Technical Lead · AI/ML Engineer</div>
+    <div class="contact-line">
+      <span>Chennai, Tamil Nadu, India</span>
+      <span>karthiyayinimuthuraj@gmail.com</span>
+      <span><a href="https://www.linkedin.com/in/karthiyayinimuthuraj/">linkedin.com/in/karthiyayinimuthuraj</a></span>
+      <span><a href="https://github.com/karthigamuthuraj">github.com/karthigamuthuraj</a></span>
+      <span><a href="https://karthigamuthuraj.github.io">karthigamuthuraj.github.io</a></span>
+    </div>
+  </div>
+
+  <h2 class="sec">Professional Summary</h2>
+  <p class="summary">
+    Senior Technical Lead and AI/ML Engineer with 15+ years of software engineering experience, now building
+    production AI systems for enterprise clients: a RAG-based knowledge platform for the healthcare domain, a
+    natural-language-to-SQL reporting engine, and document-AI pipelines for intelligent form processing.
+    Deep hands-on experience with LLM orchestration (LangChain, Azure OpenAI, Ollama), vector search (Qdrant),
+    prompt engineering and hallucination-grounded RAG. Full-stack and cloud background (Laravel, React, FastAPI,
+    AWS, Azure, GCP) — I deliver the model, the pipeline, the API and the product around it. AWS Certified Developer.
+  </p>
+
+  <h2 class="sec">Key AI Projects</h2>
+
+  <div class="entry">
+    <div class="entry-head">
+      <div class="entry-title">BloomifAI — RAG Knowledge Platform <span class="ctx">· Client Project, Healthcare &amp; Enterprise</span></div>
+    </div>
+    <ul>
+      <li>Built a RAG-based AI platform: chat over documents, AI report generation, table/SQL QA and AI form filling across a three-service backend (REST API, async LLM workers, LLM pipeline library).</li>
+      <li>Designed retrieval with Qdrant vector search, recursive/semantic chunking and a hallucination validator that grounds every answer against source documents.</li>
+      <li>Table/SQL question-answering via the WAII SDK for natural-language queries over structured data sources.</li>
+      <li>Async architecture: FastAPI + Redis job queue feeding stateless workers; multi-provider LLM layer (Azure OpenAI, OpenAI, local Ollama) orchestrated with LangChain; Postgres/MongoDB persistence.</li>
+    </ul>
+    <div class="stack"><b>Stack:</b> Python, LangChain, Azure OpenAI, Qdrant, WAII SDK, FastAPI, Redis, PostgreSQL, MongoDB, PyMuPDF, Docker</div>
+  </div>
+
+  <div class="entry">
+    <div class="entry-head">
+      <div class="entry-title">Izzy AI — Natural Language to SQL Reporting <span class="ctx">· Client Project, Analytics</span></div>
+    </div>
+    <ul>
+      <li>Conversational reporting engine: plain-English questions are converted to SQL, executed against MySQL/ClickHouse and answered with data — no analyst in the loop.</li>
+      <li>Text-to-SQL with GPT-4o and local Ollama, trained via the Vanna AI SDK on 82 curated examples with full schema awareness; semantic query caching in Qdrant with a 70–80% hit rate, cutting LLM cost and latency.</li>
+      <li>Async job processing with Redis/RQ; multi-tenant design.</li>
+    </ul>
+    <div class="stack"><b>Stack:</b> Python, OpenAI GPT-4o, Vanna AI SDK, Ollama, Qdrant, Redis/RQ, MySQL, ClickHouse</div>
+  </div>
+
+  <div class="entry">
+    <div class="entry-head">
+      <div class="entry-title">SmartForm AI — Intelligent PDF Form Filler <span class="ctx">· Open Source — github.com/karthigamuthuraj/smartform-ai</span></div>
+    </div>
+    <ul>
+      <li>Fills any PDF form from a plain-English description: converts static PDFs to fillable (CommonForms AI), labels fields with Azure Document Intelligence, maps natural-language input onto fields with GPT-4o, writes values back with PyMuPDF.</li>
+      <li>Four-stage validated pipeline behind a Flask REST API; each stage validates output before the next runs.</li>
+    </ul>
+    <div class="stack"><b>Stack:</b> Python, Flask, Azure Document Intelligence, Azure OpenAI (GPT-4o), PyMuPDF, CommonForms AI</div>
+  </div>
+
+  <div class="entry">
+    <div class="entry-head">
+      <div class="entry-title">Other AI/ML Work <span class="ctx">· github.com/karthigamuthuraj · huggingface.co/karthigamuthuraj</span></div>
+    </div>
+    <ul class="compact">
+      <li>AI Blog Generator (LLM, Hugging Face Spaces) · Audio Transcription &amp; Speaker Diarization · Automated Video Summarization (deep learning) · Face Mask Detector (TensorFlow CNN) · WhatsApp Chat Analytics (NLP).</li>
+    </ul>
+  </div>
+
+  <h2 class="sec">Technical Skills</h2>
+  <div class="skills-grid">
+    <div class="label">AI / ML</div><div class="val">LLMs &amp; Generative AI, RAG, LangChain, Prompt Engineering, NLP, Deep Learning, Machine Learning, Embeddings &amp; Vector Search (Qdrant, ChromaDB), Hallucination Validation, Document AI, Text-to-SQL</div>
+    <div class="label">AI Platforms</div><div class="val">Azure OpenAI, OpenAI, Ollama, Hugging Face, Azure Document Intelligence, Vanna AI SDK, WAII SDK</div>
+    <div class="label">Languages</div><div class="val">Python, PHP, JavaScript, SQL</div>
+    <div class="label">Backend</div><div class="val">FastAPI, Flask, Laravel, CodeIgniter, REST APIs, Redis / async workers, GraphQL, WebSockets</div>
+    <div class="label">Frontend</div><div class="val">React, Angular, Vue.js</div>
+    <div class="label">Cloud / DevOps</div><div class="val">AWS (Certified Developer — Associate: Lambda, RDS, ASG, CI/CD), Azure, GCP, Docker, Linux, Git</div>
+    <div class="label">Databases</div><div class="val">MySQL, PostgreSQL, ClickHouse, MongoDB, SQLite, Qdrant</div>
+  </div>
+
+  <h2 class="sec">Work Experience</h2>
+
+  <div class="entry">
+    <div class="entry-head">
+      <div class="entry-title">Senior Technical Lead — ConcertIDC <span class="ctx">· Chennai, India</span></div>
+      <div class="entry-date">Jan 2022 – Present</div>
+    </div>
+    <ul>
+      <li>Lead AI engineering for enterprise clients: BloomifAI RAG platform (healthcare) and Izzy AI natural-language-to-SQL reporting (see Key AI Projects above).</li>
+      <li>Led development of the "Innovazone" product; migrated Laravel 5 → 8 and Angular 2 → React, improving performance and maintainability.</li>
+      <li>Designed proof-of-concept platforms with AppSync, GraphQL, SAML and MFA authentication; built Python device-integration services for advanced scanning workflows.</li>
+    </ul>
+  </div>
+
+  <div class="entry">
+    <div class="entry-head">
+      <div class="entry-title">Senior Technical Lead — International Development Connection <span class="ctx">· Chennai, India</span></div>
+      <div class="entry-date">Mar 2020 – Jan 2021</div>
+    </div>
+    <ul class="compact">
+      <li>Developed "Innovazone" directly with stakeholders; framework upgrades (Laravel 5→8, Angular 2→React); improved Laravel ORM query performance and REST API test coverage.</li>
+    </ul>
+  </div>
+
+  <div class="entry">
+    <div class="entry-head">
+      <div class="entry-title">Technical Lead — KnackForge <span class="ctx">· Chennai, India</span></div>
+      <div class="entry-date">Jun 2018 – Jun 2019</div>
+    </div>
+    <ul class="compact">
+      <li>Enhanced infrastructure and code quality for multi-tier web systems; mentored a team of eight; evaluated P2P system architecture; built a reusable dynamic Angular forms package. "Quarterly Employee of the Year".</li>
+    </ul>
+  </div>
+
+  <div class="entry">
+    <div class="entry-head">
+      <div class="entry-title">Full-Stack Technical Lead — OptiSol Business Solutions <span class="ctx">· Madurai, India</span></div>
+      <div class="entry-date">Feb 2016 – Mar 2018</div>
+    </div>
+    <ul class="compact">
+      <li>Defined requirements with clients/BAs; managed a team of four; led development of solar-system management software. "Star Award" recipient.</li>
+    </ul>
+  </div>
+
+  <div class="entry">
+    <div class="entry-head">
+      <div class="entry-title">PHP Web Developer — Invigor Group <span class="ctx">· Chennai, India</span></div>
+      <div class="entry-date">Aug 2014 – Jan 2016</div>
+    </div>
+    <ul class="compact">
+      <li>Built logic-driven applications (CodeIgniter, Laravel, Angular, Vue.js); GPS-navigation project for the Austrian government. Awarded "Best Coder".</li>
+    </ul>
+  </div>
+
+  <div class="entry">
+    <div class="entry-head">
+      <div class="entry-title">PHP Developer — UDeserve Technologies <span class="ctx">· Madurai, India</span></div>
+      <div class="entry-date">May 2011 – Jul 2014</div>
+    </div>
+    <ul class="compact">
+      <li>Developed business applications and performance-focused scripts. "Employee of the Year" and "Employee of the Month".</li>
+    </ul>
+  </div>
+
+  <div class="two-col">
+    <div>
+      <h2 class="sec">Certifications</h2>
+      <ul class="compact" style="margin-left: 4.5mm;">
+        <li>AWS Certified Developer — Associate</li>
+        <li>Professional course in Artificial Intelligence &amp; Data Science</li>
+      </ul>
+    </div>
+    <div>
+      <h2 class="sec">Education</h2>
+      <ul class="compact" style="margin-left: 4.5mm;">
+        <li>B.E. Computer Science — Raja College of Engineering and Technology</li>
+      </ul>
+    </div>
+  </div>
+
+</div>
+</body>
+</html>
