@@ -296,7 +296,7 @@ button{font:inherit;color:inherit}
 @media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--c-guard:#D9735A;--c-gw:#D9A944;--c-orch:#6672E6;--c-sub:#5FB7A0;--c-sub2:#7F94D6;--c-out:#6FBF62;--floor:rgba(255,255,255,.03)}}
 :root[data-theme="dark"]{--c-guard:#D9735A;--c-gw:#D9A944;--c-orch:#6672E6;--c-sub:#5FB7A0;--c-sub2:#7F94D6;--c-out:#6FBF62;--floor:rgba(255,255,255,.03)}
 
-.ws2{flex:1;min-height:0;display:grid;grid-template-columns:minmax(0,1fr) 460px;gap:12px}
+.ws2{flex:1;min-height:0;display:grid;grid-template-columns:minmax(0,1fr) 12px var(--chatw,clamp(460px,38vw,640px));gap:0}
 .hq{display:flex;flex-direction:column;gap:10px;padding:16px;overflow:auto}
 .hq>*{flex:none}
 .hq-h{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:12px}
@@ -593,6 +593,58 @@ body{background:radial-gradient(1100px 600px at 0% 0%,var(--mint),transparent 60
 @media (prefers-reduced-motion:reduce){.hubring{animation:none}}
 .wire{stroke:color-mix(in srgb,var(--mint-i) 35%,transparent);stroke-dasharray:2 4}
 .wire.on{stroke:var(--lav-i);stroke-width:2;stroke-dasharray:none}
+
+/* splitter */
+.split{cursor:col-resize;display:grid;place-items:center;touch-action:none;border-radius:6px}
+.split i{width:4px;height:44px;border-radius:3px;background:var(--line);transition:background .2s,height .2s}
+.split:hover i,.split:focus-visible i,.split.drag i{background:var(--lav-i);height:72px}
+/* vertical career timeline */
+.ruler-wrap{padding:14px 14px 4px}
+.ruler{position:relative;height:16px;background:var(--panel-2);border-radius:5px}
+.ruler button{position:absolute;top:2px;bottom:2px;border:0;border-radius:3px;cursor:pointer;padding:0}
+.ruler .lv-dev{background:var(--lvl-dev)}.ruler .lv-lead{background:var(--lvl-lead)}.ruler .lv-arch{background:var(--lvl-arch)}
+.ruler button:hover{filter:brightness(1.15)}
+.ruler-y{position:relative;height:16px;margin-top:3px}
+.ruler-y span{position:absolute;transform:translateX(-10%);font-family:var(--f-mono);font-size:10px;color:var(--ink-2)}
+.vtl{list-style:none;margin:6px 0 0;padding:4px 14px 6px 28px}
+.vtl > li{position:relative;border-left:2px solid var(--line);padding:0 0 4px 16px;border-radius:0 8px 8px 0;transition:background .3s}
+.vtl > li:last-child{border-left-color:transparent}
+.vtl > li::before{content:"";position:absolute;left:-8px;top:13px;width:14px;height:14px;border-radius:50%;background:var(--panel);border:3px solid var(--lvl-dev)}
+.vtl > li.lv-lead::before{border-color:var(--lvl-lead)}.vtl > li.lv-arch::before{border-color:var(--lvl-arch);background:var(--lvl-arch)}
+.vtl > li.flash{background:var(--lav)}
+.vh{width:100%;border:0;background:transparent;text-align:left;cursor:pointer;display:grid;grid-template-columns:118px minmax(0,1fr) 16px;gap:4px 12px;padding:8px 6px;border-radius:8px;align-items:start}
+.vh:hover{background:var(--panel-2)}
+.vd{font-family:var(--f-mono);font-size:11.5px;color:var(--ink-2);line-height:1.4}
+.vd small{display:block;font-size:10.5px;color:var(--lav-i)}
+.vr b{display:block;font-size:14.5px;line-height:1.3}
+.vr span{font-size:13px;color:var(--ink-2)}
+.chev{font-size:18px;line-height:1;color:var(--ink-2);transition:transform .2s;justify-self:end}
+.vtl > li.open .chev{transform:rotate(90deg)}
+.vtl > li > ul{display:none;margin:0 0 8px;padding:0 6px 0 calc(118px + 30px);color:var(--ink-2);font-size:13.5px;list-style:disc}
+.vtl > li > ul li{margin-bottom:3px}
+.vtl > li.open > ul{display:block}
+.chat .vh{grid-template-columns:minmax(0,1fr) 16px}
+.chat .vd{grid-column:1/-1;display:flex;gap:8px;align-items:baseline}
+.chat .vd small{display:inline}
+.chat .vr{grid-row:2}
+.chat .vtl > li > ul{padding-left:24px}
+/* expand button + overlay */
+.cmp-h{gap:8px}
+.xpbtn{margin-left:auto;border:1px solid var(--line);background:var(--panel);border-radius:6px;padding:2px 8px;font-family:var(--f-mono);font-size:10.5px;color:var(--ink-2);cursor:pointer;white-space:nowrap}
+.cmp-h > .mono + .xpbtn{margin-left:8px}
+.xpbtn:hover{color:var(--lav-i);border-color:var(--lav-i)}
+.xpmodal{position:fixed;inset:0;z-index:30;background:rgba(10,12,11,.5);display:grid;place-items:center;padding:calc(20px + env(safe-area-inset-top,0px)) max(16px,env(safe-area-inset-right,0px)) calc(20px + env(safe-area-inset-bottom,0px)) max(16px,env(safe-area-inset-left,0px))}
+.xpbox{width:min(1000px,100%);max-height:100%;overflow:auto;background:linear-gradient(180deg,var(--lav),var(--panel) 120px);border-radius:16px;padding:16px;box-shadow:0 20px 60px rgba(0,0,0,.3);animation:rise .25s ease-out}
+.xphead{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:12px}
+.xpd .xpbtn{display:none}
+.xpd .kpis{grid-template-columns:repeat(4,minmax(0,1fr))!important}
+.xpd .kpis div{border-top:0!important;border-left:1px solid var(--line)!important}.xpd .kpis div:first-child{border-left:0!important}
+.xpd .pgrid{grid-template-columns:repeat(3,minmax(0,1fr))!important}
+.xpd .skills,.xpd .demos{grid-template-columns:repeat(2,minmax(0,1fr))!important}
+.xpd .vh{grid-template-columns:150px minmax(0,1fr) 16px}
+.xpd .vtl > li > ul{padding-left:calc(150px + 30px)}
+@media (max-width:1100px){.split{display:none}}
+@media (max-width:640px){.vh{grid-template-columns:minmax(0,1fr) 16px}.vd{grid-column:1/-1}.vr{grid-row:2}.vtl > li > ul,.xpd .vtl > li > ul{padding-left:24px}.xpd .vh{grid-template-columns:minmax(0,1fr) 16px}.xpd .kpis,.xpd .pgrid,.xpd .skills,.xpd .demos{grid-template-columns:minmax(0,1fr)!important}}
 </style>
 </head>
 <body>
@@ -654,6 +706,7 @@ body{background:radial-gradient(1100px 600px at 0% 0%,var(--mint),transparent 60
       <p class="mono note">The robots are animation. The guardrails, gateway, router, retrieval, SQL, grounding check and tracing are real code running in your browser. No LLM calls, nothing leaves the page.</p>
     </section>
 
+    <div class="split" id="split" role="separator" aria-orientation="vertical" aria-label="Resize the chat panel" tabindex="0"><i></i></div>
     <main class="pane chat" aria-label="Chat with the orchestrator">
       <div id="thread" aria-live="polite">
         <div class="greet">
@@ -679,6 +732,7 @@ body{background:radial-gradient(1100px 600px at 0% 0%,var(--mint),transparent 60
   <div class="labwrap" id="labView" hidden></div>
   <div class="classic" id="classicView" hidden></div>
   <div class="backdrop" id="rpBack" hidden></div>
+  <div class="xpmodal" id="xpModal" role="dialog" aria-modal="true" aria-label="Expanded answer" hidden><div class="xpbox"><div class="xphead"><span class="cap" id="xpTitle"></span><button class="btn" type="button" id="xpClose">Close ✕</button></div><div id="xpSlot"></div></div></div>
   <aside class="drawer" id="replay" role="dialog" aria-modal="true" aria-labelledby="rpT" hidden>
     <header><div><span class="cap" id="rpK"></span><h3 id="rpT"></h3><span class="mono" id="rpNote"></span></div><button class="btn" type="button" id="rpClose" aria-label="Close replay">Close ✕</button></header>
     <div class="prog"><i id="rpProg"></i></div>
@@ -779,19 +833,21 @@ const C={
    <div class="kpis"><div><b>15+</b><span>years since 2011</span></div><div><b>2</b><span>AI platforms in production</span></div><div><b>7+</b><span>AI / ML projects</span></div><div><b>AWS</b><span>Certified Developer</span></div></div>
    <div class="cmp-b" style="border-top:1px solid var(--line)">${asks(['Walk me through her career','Show a production RAG system','Query her career with SQL'])}</div></div>`),
  timeline:()=>{
-   const m0=mon('2011-01'),tot=mon('2027-01')-m0;
-   const el=h(`<div class="cmp in"><div class="cmp-h"><span class="cap">Career timeline · 2011 → now</span><span class="mono">${ROLES.length} roles</span></div>
-     <div class="tl"><div class="tl-in"><div class="track"></div><div class="years"></div></div></div>
-     <div class="legend"><span><i style="background:var(--lvl-dev)"></i>Developer</span><span><i style="background:var(--lvl-lead)"></i>Technical lead</span><span><i style="background:var(--lvl-arch)"></i>Lead → Architect</span></div>
-     <div class="roledet"></div></div>`);
-   const tr=el.querySelector('.track'),yr=el.querySelector('.years'),det=el.querySelector('.roledet');
-   for(let y=2011;y<=2027;y+=2){yr.append(h(`<span style="left:${(mon(y+'-01')-m0)/tot*100}%">${y}</span>`))}
-   function show(r,b){tr.querySelectorAll('.seg2').forEach(x=>x.setAttribute('aria-pressed',x===b?'true':'false'));
-     det.innerHTML=`<span class="mono">${fmtM(r.s)} – ${r.e?fmtM(r.e):'present'} · ${r.city} · ${r.months} months</span><h5>${esc(r.role)}</h5><span>${esc(r.co)}</span><ul>${r.pts.map(p=>`<li>${esc(p)}</li>`).join('')}</ul>`}
-   ROLES.slice().reverse().forEach(r=>{const l=(mon(r.s)-m0)/tot*100,w=r.months/tot*100;
-     const b=h(`<button type="button" class="seg2 ${r.lvl}" style="left:${l}%;width:${w}%" title="${esc(r.co)}">${esc(r.co)}</button>`);
-     b.addEventListener('click',()=>show(r,b));tr.append(b)});
-   show(ROLES[0],tr.lastElementChild);return el},
+   const m0=mon('2011-01'),tot=mon(NOW)-m0+1,pct=m=>((m-m0)/tot*100).toFixed(2);
+   const yrs=m=>m>=12?`${+(m/12).toFixed(1)} yrs`:`${m} mo`;
+   const el=h(`<div class="cmp in"><div class="cmp-h"><span class="cap">Career · 2011 → now</span><span class="mono">${ROLES.length} roles · 15+ yrs</span></div>
+     <div class="ruler-wrap"><div class="ruler">${ROLES.map((r,i)=>`<button type="button" class="lv-${r.lvl}" data-i="${i}" style="left:${pct(mon(r.s))}%;width:${(r.months/tot*100).toFixed(2)}%" aria-label="${esc(r.co)}"></button>`).join('')}</div>
+     <div class="ruler-y">${[2011,2014,2017,2020,2023,2026].map(y=>`<span style="left:${pct(mon(y+'-01'))}%">${y}</span>`).join('')}</div></div>
+     <ol class="vtl">${ROLES.map((r,i)=>`<li class="lv-${r.lvl}${i===0?' open':''}" data-i="${i}"><button type="button" class="vh" aria-expanded="${i===0}">
+        <span class="vd">${fmtM(r.s)} – ${r.e?fmtM(r.e):'now'}<small>${yrs(r.months)}</small></span>
+        <span class="vr"><b>${esc(r.role)}</b><span>${esc(r.co)} · ${r.city}</span></span><span class="chev" aria-hidden="true">›</span></button>
+        <ul>${r.pts.map(p=>`<li>${esc(p)}</li>`).join('')}</ul></li>`).join('')}</ol>
+     <div class="legend"><span><i style="background:var(--lvl-dev)"></i>Developer</span><span><i style="background:var(--lvl-lead)"></i>Technical lead</span><span><i style="background:var(--lvl-arch)"></i>Lead → Architect</span></div></div>`);
+   const items=[...el.querySelectorAll('.vtl > li')];
+   const toggle=(li,force)=>{const o=force??!li.classList.contains('open');li.classList.toggle('open',o);li.querySelector('.vh').setAttribute('aria-expanded',o)};
+   items.forEach(li=>li.querySelector('.vh').addEventListener('click',()=>toggle(li)));
+   el.querySelectorAll('.ruler button').forEach(b=>b.addEventListener('click',()=>{const li=items[+b.dataset.i];toggle(li,true);li.scrollIntoView({block:'nearest',behavior:reduce?'auto':'smooth'});li.classList.add('flash');setTimeout(()=>li.classList.remove('flash'),900)}));
+   return el},
  project:k=>{const p=PROJ[k];
    const flow=p.flow.map((n,i)=>`${i?`<div class="fc" style="--d:${i*.2}s"></div>`:''}<div class="fn${n[2]?' key':''}">${esc(n[0])}<small>${esc(n[1])}</small></div>`).join('');
    return h(`<div class="cmp in"><div class="cmp-h"><span class="cap">${esc(p.kind)}</span><span class="mono">● ${esc(p.status)}</span></div>
@@ -858,7 +914,7 @@ const INTENTS=[
  {id:'smart',re:/pdf|smartform|form filler|document ai/i,cites:['smart'],ui:()=>C.project('smart'),
   text:'SmartForm AI fills any PDF form from plain English. It converts static PDFs to fillable forms with PyMuPDF, labels fields with Azure Document Intelligence and maps input to fields with GPT-4o.'},
  {id:'career',re:/career|experience|timeline|years|worked|compan|journey|history|^\/exp/i,cites:['exp-early','exp-mid','exp-now'],ui:()=>C.timeline(),
-  text:'She started as a PHP Developer at UDeserve Technologies in 2011. She then held technical lead roles at OptiSol, KnackForge and International Development Connection. At ConcertIDC since January 2022, she was promoted to Technical Architect in 2026.',hint:'Tap any bar on the timeline to open that role.'},
+  text:'She started as a PHP Developer at UDeserve Technologies in 2011. She then held technical lead roles at OptiSol, KnackForge and International Development Connection. At ConcertIDC since January 2022, she was promoted to Technical Architect in 2026.',hint:'Tap a role to expand it, or a bar on the ruler to jump to it.'},
  {id:'lead',re:/lead|team|mentor|manag|train|claude|agent|program|^\/lead/i,cites:['lead','exp-mid'],ui:()=>C.lead(),
   text:'She has led teams of four and eight developers, mentored engineers and run code reviews, sprint planning and recruitment. At ConcertIDC she runs the AI-Assisted Development program, training developer groups on Claude Code skills, agents and MCP.'},
  {id:'stack',re:/stack|skill|tech|tool|language|cloud|aws|azure|python|laravel|react|^\/stack/i,cites:['stack'],ui:()=>C.skills(),
@@ -1158,7 +1214,7 @@ async function ask(q,{instant=false}={}){
     const su=span('tool.render_ui','TOOL',sa);
     if(it.text){const p=h(`<p class="txt"></p>`);sec.append(p);await stream(p,it.text)}
     if(it.hint)sec.append(h(`<p class="hint">${esc(it.hint)}</p>`));
-    sec.append(it.ui(g.clean));
+    const ui=it.ui(g.clean);addExpand(ui);sec.append(ui);
     end(su,{component:COMP[it.id],'stream.words':it.text?it.text.split(' ').length:0});
     if(it.text){const r=ground(it.text,it.cites);gok+=r.ok;gn+=r.n;it.cites.forEach(c=>cites.add(KBM[c].src))}
     end(sa,{'agent.name':n,'cites':it.cites});
@@ -1393,6 +1449,32 @@ const _proj=C.projects;
 C.projects=()=>{const el=_proj();el.querySelector('.cmp-b').append(h(`<div class="ctrls" style="margin-top:14px"><button class="btn pri" type="button" data-view="lab">Open the Project Lab →</button></div>`));return el};
 
 C.oss=()=>h(`<div class="cmp in"><div class="cmp-h"><span class="cap">GitHub · karthigamuthuraj</span><span class="mono">public repos</span></div><div class="cmp-b"><div class="repos">${['sdlc','qa','sheet','audio','video','smart'].map(id=>{const p=LABM[id];return `<div class="repo"><div><b>${esc(p.name)}</b><span>${esc(p.line)}</span></div><div class="ctrls"><button class="btn" type="button" data-replay="${id}">▶ Replay</button><a class="btn" href="${GH+p.repo}" target="_blank" rel="noopener" aria-label="${esc(p.name)} on GitHub">↗</a></div></div>`}).join('')}</div><div class="ctrls" style="margin-top:12px"><button class="btn pri" type="button" data-view="lab">Open the Project Lab →</button></div></div></div>`);
+
+
+/* ---------- expand-to-overlay for answer cards ---------- */
+let xpHome=null,xpEl=null,xpFocus=null;
+function addExpand(ui){const hd=ui.querySelector&&ui.querySelector(':scope > .cmp-h');if(!hd)return;
+  const b=h(`<button type="button" class="xpbtn" aria-label="Expand this card">⤢ Expand</button>`);hd.append(b);
+  b.addEventListener('click',()=>openXp(ui,hd.querySelector('.cap')?.textContent||''))}
+function openXp(el,title){xpFocus=document.activeElement;xpHome=document.createComment('xp');el.replaceWith(xpHome);xpEl=el;$('xpSlot').append(el);$('xpTitle').textContent=title;el.classList.add('xpd');$('xpModal').hidden=false;$('xpClose').focus()}
+function closeXp(){if(!xpEl)return;xpEl.classList.remove('xpd');xpHome.replaceWith(xpEl);xpEl=null;$('xpModal').hidden=true;if(xpFocus&&xpFocus.focus)xpFocus.focus()}
+$('xpClose').addEventListener('click',closeXp);
+$('xpModal').addEventListener('click',e=>{if(e.target===$('xpModal'))closeXp()});
+document.addEventListener('keydown',e=>{if(e.key==='Escape'&&!$('xpModal').hidden)closeXp()});
+
+/* ---------- resizable chat panel ---------- */
+(function(){const sp=$('split'),ws=$('agentView');
+  const set=w=>{const max=Math.max(420,ws.clientWidth-520);w=Math.max(380,Math.min(max,Math.round(w)));ws.style.setProperty('--chatw',w+'px');return w};
+  try{const v=+localStorage.getItem('ka-chatw');if(v)set(v)}catch(_){}
+  const save=w=>{try{localStorage.setItem('ka-chatw',w)}catch(_){}};
+  sp.addEventListener('pointerdown',e=>{e.preventDefault();sp.setPointerCapture(e.pointerId);sp.classList.add('drag');
+    const mv=ev=>save(set(ws.getBoundingClientRect().right-ev.clientX-6));
+    const up=()=>{sp.classList.remove('drag');sp.removeEventListener('pointermove',mv);sp.removeEventListener('pointerup',up)};
+    sp.addEventListener('pointermove',mv);sp.addEventListener('pointerup',up)});
+  sp.addEventListener('keydown',e=>{const cur=$('thread').closest('.chat').getBoundingClientRect().width;
+    if(e.key==='ArrowLeft'){e.preventDefault();save(set(cur+40))}else if(e.key==='ArrowRight'){e.preventDefault();save(set(cur-40))}});
+  sp.addEventListener('dblclick',()=>{ws.style.removeProperty('--chatw');try{localStorage.removeItem('ka-chatw')}catch(_){}});
+})();
 
 /* opening state: one completed, traced turn */
 resetSteps();renderTrace();
